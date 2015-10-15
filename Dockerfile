@@ -1,4 +1,4 @@
-FROM minimum/openfalcon-pre
+FROM ubuntu:14.04.2
 
 MAINTAINER minimum@cepave.com
 
@@ -12,7 +12,6 @@ COPY $CONFIGFILE $CONFIGDIR/
 COPY $PACKFILE $PACKDIR/
 
 WORKDIR /root
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY run.sh ./
 
 # Port
