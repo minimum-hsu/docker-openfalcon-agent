@@ -1,4 +1,4 @@
-FROM ubuntu:14.04.3
+FROM ubuntu:14.04
 
 MAINTAINER minimum@cepave.com
 
@@ -8,7 +8,7 @@ ENV WORKDIR=/home/agent PACKDIR=/package PACKFILE=falcon-agent.tar.gz CONFIGDIR=
 VOLUME $CONFIGDIR $WORKDIR $PACKDIR
 
 # Install Open-Falcon Agent Component
-RUN apt-get install -y git
+RUN apt-get update && apt-get install -y git
 COPY $CONFIGFILE $CONFIGDIR/
 COPY $PACKFILE $PACKDIR/
 
