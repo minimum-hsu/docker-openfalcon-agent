@@ -14,8 +14,6 @@ function check_pid(){
     return 0
 }
 
-tar -zxf $PACKDIR/$PACKFILE -C $WORKDIR
-cp $CONFIGDIR/$CONFIGFILE $WORKDIR
 $WORKDIR/control restart
 sleep $WAIT_SERVICE_READY
 check_pid
